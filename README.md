@@ -4,10 +4,9 @@
 
 react 集成常用组件
 
-eject命令
-react-scripts为create-react-app的一个核心包 集成一些脚本和工具
-默认配置 eject命令执行后会将 封装在create-react-app中的配置全部
-反编译到当前 项目 用户可进行自定义配置
+eject命令 执行后不可逆转
+react-scripts为create-react-app的一个核心包 集成一些脚本和工具默认配置
+eject命令执行后会将封装其中的配置全部反编译到当前项目 可进行自定义配置
 
 react-router router核心 Router Route Switch等 但无dom操作 路由跳转相关操作
 react-router-dom 提供了BrowserRouter Route Link等 可通过dom操作触发事件控制路由
