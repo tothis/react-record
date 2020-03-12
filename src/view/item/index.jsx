@@ -20,7 +20,7 @@ class Father extends React.Component {
         return (
             <div>
                 <p>子组件数据[{this.state.sonMessage}]</p>
-                <Son father={this} cancel={mode => this.cancel(mode)}/>
+                <Son father={this}/>
             </div>
         )
     }
