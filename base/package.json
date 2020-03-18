@@ -2,6 +2,7 @@
   "name": "react-record",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "scripts": {
     "start": "cross-env PORT=8888 react-scripts start",
     "build": "react-scripts build",

@@ -16,3 +16,5 @@ react-router-dom包含react-router依赖 只需安装后者
 Loadable 自动分割代码 懒加载
 普通应用打包会把所有代码打包成单一文件(如所有js压缩为一个文件) 严重延迟网页首次加载时间
 Loadable可实现自动分割代码 在需要的时动态加载 在加载时可设置加载动画组件
+
+在package.json中添加`"homepage": ".",` 打包后端静态文件会设为'./'
