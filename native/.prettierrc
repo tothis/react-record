@@ -1,0 +1,14 @@
+{
+  "jsxBracketSameLine": true,
+  "对象或数组最后一个元素后面是否加逗号": "",
+  "trailingComma": "none",
+  "table空格数": "",
+  "tabWidth": 4,
+  "semi": false,
+  "使用单引号": "",
+  "singleQuote": true,
+  "箭头函数参数只有一个时省略括号": "",
+  "arrowParens": "avoid",
+  "在对象 数组括号与文字之间加空格 { key : value }": "",
+  "bracketSpacing": true
+}
