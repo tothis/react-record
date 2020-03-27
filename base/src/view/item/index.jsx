@@ -1,5 +1,8 @@
 import React from 'react'
 import './index.css'
+// https://ant.design/components/button-cn
+import { Button,Table  } from 'antd'
+import 'antd/dist/antd.css'
 
 class Father extends React.Component {
 
@@ -19,7 +22,7 @@ class Father extends React.Component {
     render() {
         return (
             <div>
-                <p>子组件数据[{this.state.sonMessage}]</p>
+                <Button type="primary">子组件数据[{this.state.sonMessage}]</Button>
                 <Son father={this}/>
             </div>
         )
@@ -36,10 +39,25 @@ class Son extends React.Component {
     }
 
     render() {
+        const dataSource = [
+            {
+                mark: '父数据',
+                name: this.props.father.message
+            }
+        ];
+
+        const columns = [
+            {
+                title: '描述',
+                dataIndex: 'mark'
+            },
+            {
+                title: '数据',
+                dataIndex: 'name'
+            }
+        ];
         return (
-            <p>
-                父组件数据[{this.props.father.message}]
-            </p>
+            <Table dataSource={dataSource} columns={columns}></Table>
         )
     }
 }
