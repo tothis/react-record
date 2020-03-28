@@ -1,8 +1,9 @@
 import React from 'react'
 import './index.css'
 // https://ant.design/components/button-cn
-import { Button,Table  } from 'antd'
+import { Button, Table } from 'antd'
 import 'antd/dist/antd.css'
+import axios from 'axios'
 
 class Father extends React.Component {
 
@@ -33,19 +34,38 @@ class Father extends React.Component {
 class Son extends React.Component {
     message = '子组件数据'
 
-    constructor(props) {
-        super(props)
-        this.props.father.sonMessage(this.message)
+    state = {
+        data: []
     }
 
-    render() {
-        const dataSource = [
+    componentDidMount() {
+        this.props.father.sonMessage(this.message)
+        let dataSource = [
             {
+                key: '1', // 没有key 插件会警告⚠
                 mark: '父数据',
                 name: this.props.father.message
             }
-        ];
+        ]
+        axios.get('cityjson')
+            .then(result => {
+                let value = result.data
+                let indexOf = value.indexOf('{')
+                dataSource.push({
+                    key: '2',
+                    mark: '跨域',
+                    name: value.substr(indexOf, value.length - indexOf - 1)
+                })
+                this.setState({
+                    data: dataSource
+                })
+            })
+            .catch(result => {
+                console.log(result)
+            })
+    }
 
+    render() {
         const columns = [
             {
                 title: '描述',
@@ -55,9 +75,9 @@ class Son extends React.Component {
                 title: '数据',
                 dataIndex: 'name'
             }
-        ];
+        ]
         return (
-            <Table dataSource={dataSource} columns={columns}></Table>
+            <Table dataSource={this.state.data} columns={columns}></Table>
         )
     }
 }
