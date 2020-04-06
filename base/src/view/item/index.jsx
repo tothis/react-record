@@ -25,6 +25,7 @@ class Father extends React.Component {
             <div>
                 <Button type="primary">子组件数据[{this.state.sonMessage}]</Button>
                 <Son father={this}/>
+                {process.env.REACT_APP_MESSAGE}
             </div>
         )
     }

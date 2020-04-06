@@ -24,3 +24,13 @@ Loadable可实现自动分割代码 在需要的时动态加载 在加载时可�
 #### 跨域
 package.json中添加`"proxy": "https://pv.sohu.com"`
 axios使用`axios.get('cityjson')`访问`https://pv.sohu.com/cityjson`
+
+修改webpack配置
+1. eject命令暴露配置文件 直接修改webpack配置
+2. react-app-rewired 项目根目录创建config-overrides.js
+    覆写webpack配置(需修改package.json中react-scripts为react-app-rewired)
+
+#### 多环境配置文件`.env`
+`.env`定义变量时 前缀为`REACT_APP_` 否则会被忽略
+start时加载`.env.development` build时加载`.env.production`
+如需在start时加载`.env.production`或其它指定配置 可使用dotenv插件指定额外配置`dotenv -e .env.xxxx`
