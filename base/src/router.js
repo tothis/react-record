@@ -10,14 +10,19 @@ import index from './view/index'
 const item = load(() => import ('./view/item'))
 const clock = load(() => import ('./view/clock'))
 const form = load(() => import ('./view/form'))
+const multiForm = load(() => import ('./view/multi-form'))
+const table = load(() => import ('./view/table'))
 
 export default () => (
     <HashRouter>
         {/*<Route path="/" component={index}/>*/}
         {/*<Route path="" component={index}/>*/}
+        {/* 路由必须由`/`开头 */}
         <Route component={index}/>
         <Route path="/item" component={item}/>
         <Route path="/clock" component={clock}/>
         <Route path="/form" component={form}/>
+        <Route path="/multi-form" component={multiForm}/>
+        <Route path="/table" component={table}/>
     </HashRouter>
 )
