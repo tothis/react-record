@@ -15,6 +15,7 @@ class Index extends React.Component {
                 <Link to={{ pathname: 'form' }}>form</Link>
                 <Link to={{ pathname: 'multi-form' }}>multiForm</Link>
                 <Link to={{ pathname: 'table' }}>table</Link>
+                <Link to={{ pathname: 'mock' }}>mock</Link>
             </div>
         return (html)
     }

@@ -12,6 +12,7 @@ const clock = load(() => import ('./view/clock'))
 const form = load(() => import ('./view/form'))
 const multiForm = load(() => import ('./view/multi-form'))
 const table = load(() => import ('./view/table'))
+const mock = load(() => import ('./view/mock'))
 
 export default () => (
     <HashRouter>
@@ -24,5 +25,6 @@ export default () => (
         <Route path="/form" component={form}/>
         <Route path="/multi-form" component={multiForm}/>
         <Route path="/table" component={table}/>
+        <Route path="/mock" component={mock}/>
     </HashRouter>
 )

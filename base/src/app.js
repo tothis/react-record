@@ -1,8 +1,9 @@
-import React from 'react';
-import Router from './router';
+import React from 'react'
+import Router from './router'
+import './mock'
 
 function app() {
-    return (<Router/>);
+    return (<Router/>)
 }
 
-export default app;
+export default app
