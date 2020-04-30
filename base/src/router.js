@@ -13,6 +13,9 @@ const form = load(() => import ('./view/form'))
 const multiForm = load(() => import ('./view/multi-form'))
 const table = load(() => import ('./view/table'))
 const mock = load(() => import ('./view/mock'))
+const map = load(() => import ('./view/map'))
+const amap = load(() => import ('./view/map/amap'))
+const openLayers = load(() => import ('./view/map/open-layers'))
 
 export default () => (
     <HashRouter>
@@ -26,5 +29,8 @@ export default () => (
         <Route path="/multi-form" component={multiForm}/>
         <Route path="/table" component={table}/>
         <Route path="/mock" component={mock}/>
+        <Route path="/map" component={map}/>
+        <Route path="/map/amap" component={amap}/>
+        <Route path="/map/open-layers" component={openLayers}/>
     </HashRouter>
 )
