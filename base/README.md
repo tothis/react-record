@@ -34,3 +34,26 @@ axios使用`axios.get('cityjson')`访问`https://pv.sohu.com/cityjson`
 `.env`定义变量时 前缀为`REACT_APP_` 否则会被忽略
 start时加载`.env.development` build时加载`.env.production`
 如需在start时加载`.env.production`或其它指定配置 可使用dotenv插件指定额外配置`dotenv -e .env.xxxx`
+
+***
+
+react生命周期
+
+1. 初始化
+constructor
+static getDerivedStateFromProps()
+componentWillMount() / UNSAFE_componentWillMount()
+render()
+componentDidMount()
+2. 更新 即props或state改变时
+componentWillReceiveProps() / UNSAFE_componentWillReceiveProps()
+static getDerivedStateFromProps()
+shouldComponentUpdate()
+componentWillUpdate() / UNSAFE_componentWillUpdate()
+render()
+getSnapshotBeforeUpdate()
+componentDidUpdate()
+3. 卸载
+componentWillUnmount()
+4. 错误处理
+componentDidCatch()

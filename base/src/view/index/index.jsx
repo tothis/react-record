@@ -17,6 +17,7 @@ class Index extends React.Component {
                 <Link to={{ pathname: '/table' }}>table</Link>
                 <Link to={{ pathname: '/mock' }}>mock</Link>
                 <Link to={{ pathname: '/map/amap' }}>map</Link>
+                <Link to={{ pathname: '/hook' }}>hook</Link>
             </div>
         return (html)
     }

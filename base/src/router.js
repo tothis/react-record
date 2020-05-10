@@ -16,6 +16,7 @@ const mock = load(() => import ('./view/mock'))
 const map = load(() => import ('./view/map'))
 const amap = load(() => import ('./view/map/amap'))
 const openLayers = load(() => import ('./view/map/open-layers'))
+const hook = load(() => import ('./view/hook'))
 
 export default () => (
     <HashRouter>
@@ -32,5 +33,6 @@ export default () => (
         <Route path="/map" component={map}/>
         <Route path="/map/amap" component={amap}/>
         <Route path="/map/open-layers" component={openLayers}/>
+        <Route path="/hook" component={hook}/>
     </HashRouter>
 )
