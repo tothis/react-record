@@ -1,6 +1,6 @@
 import React from 'react'
 import Router from './router'
-import './mock'
+import '@/mock/index.js'
 
 function app() {
     return (<Router/>)

@@ -28,7 +28,7 @@ axios使用`axios.get('cityjson')`访问`https://pv.sohu.com/cityjson`
 修改webpack配置
 1. eject命令暴露配置文件 直接修改webpack配置
 2. react-app-rewired 项目根目录创建config-overrides.js
-    覆写webpack配置(需修改package.json中react-scripts为react-app-rewired)
+覆写webpack配置(需修改package.json中react-scripts为react-app-rewired)
 
 #### 多环境配置文件`.env`
 `.env`定义变量时 前缀为`REACT_APP_` 否则会被忽略
