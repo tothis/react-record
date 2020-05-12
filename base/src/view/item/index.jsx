@@ -21,10 +21,14 @@ class Father extends React.Component {
     }
 
     render() {
+        const a = 'font-weight:bold;color:#fff;background:#606060;padding:5px 0;border-radius:4px 0 0 4px;'
+        const b = 'font-weight:bold;color:#fff;background:#ff8585;padding:5px 0;border-radius:0 4px 4px 0;'
         return (
             <div>
                 <Button type="primary">子组件数据[{this.state.sonMessage}]</Button>
                 <Son father={this}/>
+                {console.log(`%c version %c ${process.env.REACT_APP_VERSION} `, a, b)}
+                {console.log(`%c build-time %c ${process.env.REACT_APP_BUILD_TIME} `, a, b)}
                 {process.env.REACT_APP_MESSAGE}
                 {process.env.REACT_APP_BUILD_TIME}
             </div>

@@ -35,6 +35,42 @@ axios使用`axios.get('cityjson')`访问`https://pv.sohu.com/cityjson`
 start时加载`.env.development` build时加载`.env.production`
 如需在start时加载`.env.production`或其它指定配置 可使用dotenv插件指定额外配置`dotenv -e .env.xxxx`
 
+#### 添加打包进度条 自动添加打包版本号
+`yarn add env-cmd progress-bar-webpack-plugin -D`
+1. 添加progress-bar-webpack-plugin进度条插件
+```js
+// 根路径config-overrides.js
+const chalk = require('chalk')
+    // progress 进度条插件
+    , progressBarPlugin = require('progress-bar-webpack-plugin')({
+        width: 60
+        , format: `${chalk.green('build')} [ ${chalk.cyan(':bar')} ]`
+        + ` ${chalk.cyan(':msg')} ${chalk.red('(:percent)')}`
+        , clear: true
+    })
+module.exports = (config, env) => {
+    // 添加插件
+    config.plugins.push(progressBarPlugin)
+    return config
+}
+```
+2. 配置version.js
+```js
+// 此处定义的环境变量会覆盖env文件定义的环境变量
+module.exports = Promise.resolve({
+    REACT_APP_VERSION: '1.0',
+    REACT_APP_BUILD_TIME: new Date().getTime()
+})
+```
+3. 配置package.json
+```json
+{
+	"scripts": {
+	    "build": "env-cmd -f version.js react-app-rewired build"
+  }
+}
+```
+
 ***
 
 react生命周期
