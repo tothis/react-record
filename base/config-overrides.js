@@ -12,7 +12,7 @@ const chalk = require('chalk')
         width: 60
         , format: `${chalk.green('build')} [ ${chalk.cyan(':bar')} ]`
         + ` ${chalk.cyan(':msg')} ${chalk.red('(:percent)')}`
-        , clear: true
+        , clear: false // 默认true
     })
 
 // customize-cra中组件 在此函数中使用方可生效
@@ -21,7 +21,6 @@ module.exports = override(
     addWebpackPlugin(progressBarPlugin)
     , addWebpackAlias({
         '@': path.resolve(__dirname, 'src')
-        // , 'components': path.resolve(__dirname, 'src/components')
     })
     // 配置按需加载 依赖babel-plugin-import库
     , fixBabelImports('import', {

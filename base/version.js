@@ -8,7 +8,8 @@
 // 此处定义的环境变量会覆盖env文件定义的环境变量
 module.exports = Promise.resolve({
     REACT_APP_VERSION: '1.0',
-    REACT_APP_BUILD_TIME: now()
+    REACT_APP_BUILD_TIME: now(),
+    REACT_APP_AMAP_KEY: '地图key'
 })
 
 function now() {
