@@ -29,6 +29,7 @@ class Father extends React.Component {
                 <Son father={this}/>
                 {console.log(`%c version %c ${process.env.REACT_APP_VERSION} `, a, b)}
                 {console.log(`%c build-time %c ${process.env.REACT_APP_BUILD_TIME} `, a, b)}
+                {console.log(`%c message %c ${process.env.REACT_APP_MESSAGE} `, a, b)}
             </div>
         )
     }

@@ -1,5 +1,6 @@
 import React from 'react'
-import Map from '@/component/amap'
+import Geolocation from '@/component/amap/geolocation'
+// import geocoder from '@/component/amap/geocoder'
 
 export default class extends React.Component {
     constructor() {
@@ -24,7 +25,7 @@ export default class extends React.Component {
 
     render() {
         return <div style={{ height: '80%' }}>
-            <Map title="map" mapData={this.mapData}/>
+            <Geolocation  mapData={this.mapData}/>
         </div>
     }
 }

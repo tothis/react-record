@@ -9,7 +9,8 @@
 module.exports = Promise.resolve({
     REACT_APP_VERSION: '1.0',
     REACT_APP_BUILD_TIME: now(),
-    REACT_APP_AMAP_KEY: '地图key'
+    PORT: 8888,
+    REACT_APP_AMAP_KEY: '42c177c66c03437400aa9560dad5451e'
 })
 
 function now() {

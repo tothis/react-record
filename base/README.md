@@ -33,7 +33,23 @@ axios使用`axios.get('cityjson')`访问`https://pv.sohu.com/cityjson`
 #### 多环境配置文件`.env`
 `.env`定义变量时 前缀为`REACT_APP_` 否则会被忽略
 start时加载`.env.development` build时加载`.env.production`
-如需在start时加载`.env.production`或其它指定配置 可使用dotenv插件指定额外配置`dotenv -e .env.xxxx`
+如需在start时加载`.env.production`或其它指定配置
+
+可使用dotenv插件指定额外配置`dotenv -e .env.xxxx`
+dotenv多文件写法`dotenv -e .env.a -e .env.b`
+
+或使用env-cmd插件指定额外配置`env-cmd -f .env.xxxx`
+env-cmd多文件写法`env-cmd -e .env.a env-cmd -e .env.b`
+
+env-cmd可指定js文件 dotenv只可指定普通文件
+
+fuck-env插件 支持命令行 文件等方式设置环境变量
+#### 启动端口号
+同多环境配置文件方式 修改`PORT`环境变量
+使用cross-env插件 package.json scripts中添加如下
+在`"start": "cross-env PORT=8888 react-app-rewired start"`
+
+或通过dotenv或env-cmd指定变量文件 配置PORT变量即可
 
 #### 添加打包进度条 自动添加打包版本号
 `yarn add env-cmd progress-bar-webpack-plugin -D`

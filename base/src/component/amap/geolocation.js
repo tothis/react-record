@@ -10,8 +10,7 @@ export default class extends Component {
 
         // 地图事件
         this.amapEvents = {
-            created: instance => {
-
+            created: e => {
             }
         }
 
@@ -32,16 +31,16 @@ export default class extends Component {
             , convert: true // 自动偏移坐标 偏移后的坐标为高德坐标 默认 true
             , showButton: false // 显示定位按钮 默认 true
             , buttonPosition: 'RB' // 定位按钮停靠位置 默认'LB'左下角
-            //, events: {
-            //     created: o => {
-            //         // 获取用户当前精确位置信息
-            //         o.getCurrentPosition((status, result) => {
-            //             if (result && result.position) {
-            //                 console.log(result)
-            //             }
-            //         })
-            //     }
-            // }
+            , events: {
+                created: o => {
+                    // 获取用户当前精确位置信息
+                    o.getCurrentPosition((status, result) => {
+                        if (result && result.position) {
+                            console.log(result)
+                        }
+                    })
+                }
+            }
         }
     }
 
@@ -57,7 +56,7 @@ export default class extends Component {
                 plugins={plugins}
                 events={this.amapEvents}
             >
-                {/*<Geolocation {...this.geolocationConfig}/>*/}
+                <Geolocation {...this.geolocationConfig}/>
                 {this.data.mapData.mapMaker.map((item, index) => (
                     <Marker
                         key={index}
